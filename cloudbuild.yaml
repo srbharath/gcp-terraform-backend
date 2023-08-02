@@ -20,18 +20,18 @@ steps:
         set -x  # Enable debug mode
         terraform init 
         set +x  # Disable debug mode
-# To pull the terraform state file
-  - id: 'tf state pull'
-    name: 'google/cloud-sdk:latest'
-    entrypoint: 'sh'
-    args:
-      - '-c'
-      - |
-        if gsutil ls gs://terraform-state-bucket/ 2>&1 | grep -q 'BucketNotFoundException'; then
-          echo "Bucket not found. Skipping state file copy."
-        else
-          gsutil cp gs://terraform-state-bucket/terraform.tfstate .
-        fi
+# # To pull the terraform state file
+#   - id: 'tf state pull'
+#     name: 'google/cloud-sdk:latest'
+#     entrypoint: 'sh'
+#     args:
+#       - '-c'
+#       - |
+#         if gsutil ls gs://terraform-state-bucket/ 2>&1 | grep -q 'BucketNotFoundException'; then
+#           echo "Bucket not found. Skipping state file copy."
+#         else
+#           gsutil cp gs://terraform-state-bucket/terraform.tfstate .
+#         fi
 
 # to run terraform apply
   - id: 'tf apply'
