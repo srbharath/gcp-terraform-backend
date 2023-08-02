@@ -1,5 +1,5 @@
-substitutions:
-  _TF_BUCKET_NAME: "terraform-state-bucket"
+# substitutions:
+#   _TF_BUCKET_NAME: "terraform-state-bucket"
 steps:
   # To check if the S3 bucket exists and create it if not
   - id: 'check or create S3 bucket'
@@ -8,8 +8,7 @@ steps:
     args:
       - '-c'
       - |
-        BUCKET_NAME=$_TF_BUCKET_NAME
-        gsutil ls -b gs://$BUCKET_NAME || gsutil mb gs://$BUCKET_NAME
+        gsutil ls -b gs://terraform-state-bucket || gsutil mb gs://terraform-state-bucket
 
   #To run terraform init
   - id: 'tf init'
