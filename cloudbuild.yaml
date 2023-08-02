@@ -8,11 +8,9 @@ steps:
     args:
       - '-c'
       - |
-        set -x  # Enable debug mode
-        _BUCKET_NAME="terraform-state-bucket"
-        gsutil ls -b gs://$BUCKET_NAME || gsutil mb gs://$BUCKET_NAME
-        set +x  # Disable debug mode
-
+        _TF_BUCKET_NAME="terraform-state-bucket"
+        gsutil ls -b gs://$_TF_BUCKET_NAME || gsutil mb gs://$_TF_BUCKET_NAME
+        
   #To run terraform init
   - id: 'tf init'
     name: 'hashicorp/terraform:1.0.0'
