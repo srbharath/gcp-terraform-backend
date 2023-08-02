@@ -8,7 +8,7 @@ steps:
     args:
       - '-c'
       - |
-        gsutil ls -b gs://terraform-state-bucket || gsutil mb gs://terraform-state-bucket
+        gsutil ls -b gs://terraform-sftp-bucket || gsutil mb gs://terraform-sftp-bucket
 
   #To run terraform init
   - id: 'tf init'
