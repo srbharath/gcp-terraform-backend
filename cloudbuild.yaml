@@ -17,7 +17,7 @@ steps:
         if gsutil ls gs://2-storage-buckect/ 2>&1 | grep -q 'BucketNotFoundException'; then
           echo "Bucket not found. Skipping state file copy."
         else
-          gsutil cp gs://2-storage-buckect/terraform.tfstate .
+          gsutil cp gs://2-storage-buckect/ .
         fi
 
 # to run terraform apply
