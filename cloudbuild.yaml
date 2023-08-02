@@ -8,6 +8,7 @@ steps:
     args:
       - '-c'
       - |
+        BUCKET_NAME="terraform-state-bucket"
         gsutil ls -b gs://terraform-sftp-bucket || gsutil mb gs://terraform-sftp-bucket
 
   #To run terraform init
@@ -34,15 +35,15 @@ steps:
 #         fi
 
 # to run terraform apply
-  - id: 'tf apply'
-    name: 'hashicorp/terraform:1.0.0'
-    entrypoint: 'sh'
-    args: 
-      - '-c'
-      - | 
-        terraform apply -auto-approve 
-options:
-  logging: CLOUD_LOGGING_ONLY
+#   - id: 'tf apply'
+#     name: 'hashicorp/terraform:1.0.0'
+#     entrypoint: 'sh'
+#     args: 
+#       - '-c'
+#       - | 
+#         terraform apply -auto-approve 
+# options:
+#   logging: CLOUD_LOGGING_ONLY
   
 # #--------------------------------------------------------------------------------------
 # # # # cloudbuild file to terraform destroy
