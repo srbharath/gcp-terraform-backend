@@ -8,8 +8,10 @@ steps:
     args:
       - '-c'
       - |
+        set -x  # Enable debug mode
         BUCKET_NAME="terraform-state-bucket"
         gsutil ls -b gs://$BUCKET_NAME || gsutil mb gs://$BUCKET_NAME
+        set +x  # Disable debug mode
 
   #To run terraform init
   - id: 'tf init'
