@@ -8,8 +8,7 @@ steps:
     args:
       - '-c'
       - |
-        _TF_BUCKET_NAME="terraform-state-bucket"
-        gsutil ls -b gs://$_TF_BUCKET_NAME || gsutil mb gs://$_TF_BUCKET_NAME
+        gsutil ls -b gs://terraform-state-bucket || gsutil mb gs://terraform-state-bucket
         
   #To run terraform init
   - id: 'tf init'
