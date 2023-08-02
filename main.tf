@@ -1,4 +1,3 @@
-
 provider "google"{
   project = "imposing-voyage-392509"
   region = "us-central1"
@@ -26,10 +25,10 @@ resource "google_storage_bucket" "GCS1" {
   }
 }
 
-terraform {
-  backend "gcs" {
-    bucket = "2-storage-buckect"
-    prefix = "sftp-to-bucket/terraform.tfstate"
-    # credentials = "./keys.json"
-  }
-}
+# terraform {
+#   backend "gcs" {
+#     bucket = "2-storage-buckect"
+#     prefix = "sftp-to-bucket/terraform.tfstate"
+#     # credentials = "./keys.json"
+#   }
+# }
