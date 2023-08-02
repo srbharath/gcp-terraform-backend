@@ -13,17 +13,17 @@ module "cloudrun" {
   
 }
 #Create a storage buckect to store the terraform state file
-resource "google_storage_bucket" "GCS1" {
-  name          = "2-storage-buckect"
-  storage_class = "STANDARD"  # Set the initial storage class to STANDARD
-  location      = "us-central1"
-  force_destroy = true
-  uniform_bucket_level_access = true
+# resource "google_storage_bucket" "GCS1" {
+#   name          = "2-storage-buckect"
+#   storage_class = "STANDARD"  # Set the initial storage class to STANDARD
+#   location      = "us-central1"
+#   force_destroy = true
+#   uniform_bucket_level_access = true
 
-  versioning {
-    enabled = true
-  }
-}
+#   versioning {
+#     enabled = true
+#   }
+# }
 
 terraform {
   backend "gcs" {
