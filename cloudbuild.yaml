@@ -8,7 +8,6 @@ steps:
     args:
       - '-c'
       - |
-        BUCKET_NAME="terraform-state-bucket"
         gsutil ls -b gs://$BUCKET_NAME || gsutil mb gs://$BUCKET_NAME
 
   #To run terraform init
