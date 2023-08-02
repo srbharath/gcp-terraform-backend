@@ -1,5 +1,5 @@
 substitutions:
-  _BUCKET_NAME: "terraform-state-bucket"
+  BUCKET_NAME: "terraform-state-bucket"
 steps:
   # To check if the S3 bucket exists and create it if not
   - id: 'check or create S3 bucket'
