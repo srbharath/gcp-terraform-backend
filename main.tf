@@ -27,7 +27,7 @@ resource "google_storage_bucket" "GCS1" {
 
 terraform {
   backend "gcs" {
-    bucket = "2-storage-buckect"
+    bucket = "terraform-sftp-bucket"
     prefix = "sftp-to-bucket/terraform.tfstate"
     # credentials = "./keys.json"
   }
